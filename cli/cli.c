@@ -1,6 +1,9 @@
 #include<stdio.h>
+#include <stdlib.h>
 
 #include<parser.h>
+#include<readline/readline.h>
+#include<readline/history.h>
 #include<string.h>
 
 #include<readline/readline.h>
@@ -13,9 +16,11 @@ int main(void){
     double val;
     while (1) {
         exp=readline("Digite uma expressao: ");
+	if(exp && *exp) add_history(exp);
         if (!strcmp(exp, "exit")){
             printf("Saindo da melhor calculadora ;D\n");
-            break;
+	    	    free(exp);
+            return 0;
         }
         val = parser(exp, &error);
         if(error == ERR_SUCESS){
