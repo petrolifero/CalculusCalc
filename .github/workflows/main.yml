@@ -20,7 +20,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: install cmake
-      run: apt install cmake
+      run: sudo apt-get install cmake
       
     - name: configure-and-build-and-test
       run: mkdir build && cd build && cmake .. && cmake --build . && ctest
