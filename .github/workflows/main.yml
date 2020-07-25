@@ -22,7 +22,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: install cmake and valgrind
-      run: sudo apt-get install cmake=3.16.3 valgrind=3.15.0
+      run: sudo apt-get install cmake valgrind
       
     - name: configure-and-build-and-test
       run: mkdir build && cd build && cmake .. && cmake --build . && ctest
