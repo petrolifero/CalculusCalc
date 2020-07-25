@@ -19,8 +19,8 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    - name: install cmake
-      run: sudo apt-get install cmake
+    - name: install cmake and valgrind
+      run: sudo apt-get install cmake valgrind
       
     - name: configure-and-build-and-test
       run: mkdir build && cd build && cmake .. && cmake --build . && ctest
